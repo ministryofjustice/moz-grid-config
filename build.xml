@@ -9,6 +9,8 @@
 
   <target name="fetch-dependencies">
     <mkdir dir="lib"/>
+    <mkdir dir="lib/chromedriver_mac32"/>
+
     <get src="http://selenium-release.storage.googleapis.com/${selenium.version.major}/selenium-server-standalone-${selenium.version.major}.${selenium.version.minor}.jar"
          dest="lib"
          usetimestamp="true"
@@ -17,6 +19,7 @@
          dest="lib"
          usetimestamp="true"
          ignoreerrors="yes"/>
+    <unzip src="lib/chromedriver_mac32.zip" dest="lib/chromedriver_mac32/"/>
 
 
     <available file="lib/selenium-server-standalone-${selenium.version.major}.${selenium.version.minor}.jar" property="selenium.present"/>
