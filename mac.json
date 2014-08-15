@@ -3,7 +3,7 @@
         [
             {
                 "browserName": "firefox",
-                "firefox_binary": "/Applications/Firefox 24.app/Contents/MacOS/firefox-bin",
+                "firefox_binary": "/Applications/Firefox.app/Contents/MacOS/firefox-bin",
                 "platform": "OS X 10.9",
                 "maxInstances": 5,
                 "seleniumProtocol": "WebDriver"
