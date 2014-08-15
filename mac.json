@@ -3,26 +3,19 @@
         [
             {
                 "browserName": "firefox",
-                "version": "24",
                 "firefox_binary": "/Applications/Firefox 24.app/Contents/MacOS/firefox-bin",
-                "platform": "MAC",
-                "maxInstances": 1,
+                "platform": "OS X 10.9",
+                "maxInstances": 5,
                 "seleniumProtocol": "WebDriver"
-            }, {
-                "browserName": "firefox",
-                "version": "27",
-                "firefox_binary": "/Applications/Firefox 27.app/Contents/MacOS/firefox-bin",
-                "platform": "MAC",
-                "maxInstances": 1,
+            },
+             {
+                "browserName": "chrome",
+                "chrome_binary": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+                "platform": "OS X 10.9",
+                "version": "",
+                "maxInstances": 5,
                 "seleniumProtocol": "WebDriver"
-            }, {
-                "browserName": "firefox",
-                "version": "28",
-                "firefox_binary": "/Applications/Firefox 28.app/Contents/MacOS/firefox-bin",
-                "platform": "MAC",
-                "maxInstances": 1,
-                "seleniumProtocol": "WebDriver"
-            }
+            },
         ],
     "configuration": {}
 }
