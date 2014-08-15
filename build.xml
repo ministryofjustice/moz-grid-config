@@ -13,10 +13,19 @@
          dest="lib"
          usetimestamp="true"
          ignoreerrors="yes"/>
+    <get src="http://chromedriver.storage.googleapis.com/2.10/chromedriver_mac32.zip"
+         dest="lib"
+         usetimestamp="true"
+         ignoreerrors="yes"/>
+
 
     <available file="lib/selenium-server-standalone-${selenium.version.major}.${selenium.version.minor}.jar" property="selenium.present"/>
+    <available file="lib/chromedriver_mac32.zip" property="chromedriver.present"/>
 
     <fail unless="selenium.present" message="Unable to locate lib/selenium-server-standalone-${selenium.version.major}.${selenium.version.minor}.jar"/>
+  
+    <fail unless="chromedriver.present" message="Unable to locate lib/chromedriver_mac32.zip"/>
+
   </target>
 
   <target name="set-config">
