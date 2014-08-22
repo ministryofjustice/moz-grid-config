@@ -17,5 +17,8 @@
                 "seleniumProtocol": "WebDriver"
             },
         ],
-    "configuration": {}
+    "configuration": {
+        "hubPort": 4444,
+        "hubHost": "54.76.119.55"
+    }
 }

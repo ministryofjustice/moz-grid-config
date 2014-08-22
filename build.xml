@@ -20,6 +20,7 @@
          usetimestamp="true"
          ignoreerrors="yes"/>
     <unzip src="lib/chromedriver_mac32.zip" dest="lib/chromedriver_mac32/"/>
+    <chmod file="lib/chromedriver_mac32/chromedriver" perm="ugo+rx"/>
 
 
     <available file="lib/selenium-server-standalone-${selenium.version.major}.${selenium.version.minor}.jar" property="selenium.present"/>
@@ -109,6 +110,7 @@
           classpathref="selenium.classpath"
           fork="true"
           failonerror="true">
+      <sysproperty key="webdriver.chrome.driver" value="lib/chromedriver_mac32/chromedriver"/>
       <arg value="-role"/>
       <arg value="hub"/>
       <arg value="-hubConfig"/>
