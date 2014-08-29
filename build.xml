@@ -68,7 +68,7 @@
     </condition>
 
     <!-- otherwise set to localhost (unless overridden) -->
-    <property name="hub.host" value="localhost"/>
+    <property name="hub.host" value="172.31.26.191"/>
 
     <!-- if this is a production node that can't be addressed then use IP -->
     <condition property="node.host" value="IP">
@@ -82,9 +82,12 @@
     <condition property="node.host" value="localhost">
       <matches pattern="localhost" string="${hub.host}"/>
     </condition>
-
+    <exec executable="/bin/bash" outputproperty="tunnelIP">
+	<arg value="-c"/>
+	<arg value="ifconfig tun0 | grep -E 'inet.[0-9]' | grep -v '127.0.0.1' | awk '{ print $2}'"/>
+    </exec>
     <!-- otherwise set to the hostname -->
-    <property name="node.host" value="${env.HOSTNAME}"/>
+    <property name="node.host" value="${tunnelIP}"/>
 
     <echo>hub.host: ${hub.host}</echo>
     <echo>node.host: ${node.host}</echo>
@@ -142,6 +145,7 @@
           classname="org.openqa.grid.selenium.GridLauncher"
           fork="true"
           failonerror="true">
+      <sysproperty key="webdriver.chrome.driver" value="lib/chromedriver_mac32/chromedriver"/>
       <arg value="-role"/>
       <arg value="node"/>
       <arg value="-id"/>

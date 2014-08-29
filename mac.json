@@ -19,6 +19,6 @@
         ],
     "configuration": {
         "hubPort": 4444,
-        "hubHost": "54.76.119.55"
+        "hubHost": "172.31.26.191"
     }
 }
