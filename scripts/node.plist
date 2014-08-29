@@ -8,7 +8,7 @@
   <string>io.dsd.cla.seleniumhub</string>
   <key>ProgramArguments</key>
   <array>
-    <string>/usr/bin/ant</string>
+    <string>/usr/local/bin/ant</string>
     <string>launch-node</string>
   </array>
   <key>RunAtLoad</key>
