@@ -84,7 +84,7 @@
     </condition>
     <exec executable="/bin/bash" outputproperty="tunnelIP">
 	<arg value="-c"/>
-	<arg value="ifconfig tun0 | grep -E 'inet.[0-9]' | grep -v '127.0.0.1' | awk '{ print $2}'"/>
+	<arg value="ifconfig utun0 | grep -E 'inet.[0-9]' | grep -v '127.0.0.1' | awk '{ print $2}'"/>
     </exec>
     <!-- otherwise set to the hostname -->
     <property name="node.host" value="${tunnelIP}"/>
